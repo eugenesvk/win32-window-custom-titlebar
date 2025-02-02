@@ -298,11 +298,7 @@ win32_custom_title_bar_example_window_callback(HWND handle,UINT message,WPARAM w
         MoveToEx	(hdc, icon_rect.left     , icon_rect.bottom     , NULL);
         LineTo  	(hdc, icon_rect.right + 1, icon_rect.top    - 1       );
         if (custom_pen) DeleteObject(custom_pen);
-      }
-      DeleteObject(title_bar_hover_brush);
-      DeleteObject(button_icon_brush);
-      DeleteObject(button_icon_pen);
-      DeleteObject(title_bar_brush);
+      }; DeleteObject(title_bar_hover_brush);DeleteObject(button_icon_brush);DeleteObject(button_icon_pen);DeleteObject(title_bar_brush);
 
       // Draw window title
       LOGFONT logical_font;
