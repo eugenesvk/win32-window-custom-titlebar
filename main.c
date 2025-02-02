@@ -122,10 +122,9 @@ win32_get_title_bar_button_rects(HWND handle, const RECT *title_bar_rect) {
   UINT dpi = GetDpiForWindow(handle);
   CustomTitleBarButtonRects button_rects;
   // Sadly SM_CXSIZE does not result in the right size buttons for Win10
-  int button_width      	 = win32_dpi_scale(47, dpi);
-  button_rects.close    	 = *title_bar_rect;
-  button_rects.close.top	+= WIN32_FAKE_SHADOW_HEIGHT;
-
+  int button_width           	 = win32_dpi_scale(47, dpi);
+  button_rects.close         	 = *title_bar_rect;
+  button_rects.close.top     	+= WIN32_FAKE_SHADOW_HEIGHT;
   button_rects.close.left    	 = button_rects.close.right - button_width;
   button_rects.maximize      	 = button_rects.close;
   button_rects.maximize.left 	-= button_width;
