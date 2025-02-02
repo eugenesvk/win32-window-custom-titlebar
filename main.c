@@ -127,8 +127,8 @@ win32_get_title_bar_button_rects(HWND handle, const RECT *title_bar_rect) {
   button_rects.close.top     	+= WIN32_FAKE_SHADOW_HEIGHT;
   button_rects.close.left    	 = button_rects.close.right - button_width;
   button_rects.maximize      	 = button_rects.close;
-  button_rects.maximize.left 	-= button_width;
-  button_rects.maximize.right	-= button_width;
+  button_rects.maximize.left 	-= 2*button_width; // since min/max is not as dangerous as Close, offset them to make it harder to misclick
+  button_rects.maximize.right	-= 2*button_width;
   button_rects.minimize      	 = button_rects.maximize;
   button_rects.minimize.left 	-= button_width;
   button_rects.minimize.right	-= button_width;
