@@ -231,7 +231,7 @@ win32_custom_title_bar_example_window_callback(HWND handle,UINT message,WPARAM w
       bool has_focus = !!GetFocus();
       PAINTSTRUCT ps; HDC hdc = BeginPaint(handle, &ps);
       // Paint Background
-      COLORREF bg_color = RGB(200, 250, 230);
+      COLORREF bg_color = RGB(254,249,240);
       HBRUSH   bg_brush = CreateSolidBrush(bg_color);
       FillRect(hdc, &ps.rcPaint, bg_brush);
       DeleteObject(bg_brush);
