@@ -284,7 +284,12 @@ win32_custom_title_bar_example_window_callback(HWND handle,UINT message,WPARAM w
         HPEN custom_pen = 0;
         if (title_bar_hovered_button == CustomTitleBarHoveredButton_Close) {
           HBRUSH fill_brush = CreateSolidBrush(RGB(0xCC, 0, 0));
-          FillRect(hdc, &button_rects.close, fill_brush); DeleteObject(fill_brush);
+          RECT fill_rect = {0};
+          fill_rect.top   	= button_rects.close.top   + WIN32_FAKE_SHADOW_HEIGHT;
+          fill_rect.bottom	= button_rects.close.bottom   ;
+          fill_rect.left  	= button_rects.close.left     ;
+          fill_rect.right 	= button_rects.close.right - 1; //todo: use actual window border width
+          FillRect(hdc, &fill_rect, fill_brush); DeleteObject(fill_brush);
           custom_pen = CreatePen(PS_SOLID, 1, RGB(0xFF,0xFF,0xFF));
           SelectObject(hdc, custom_pen);
         }
