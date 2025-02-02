@@ -264,9 +264,9 @@ win32_custom_title_bar_example_window_callback(HWND handle,UINT message,WPARAM w
       { // Maximize button
         bool const is_hovered = title_bar_hovered_button == CustomTitleBarHoveredButton_Maximize;
         if (is_hovered) {FillRect(hdc, &button_rects.maximize, title_bar_hover_brush);}
-        RECT icon_rect 	= {0};
+        RECT icon_rect  	= {0};
         icon_rect.right 	= icon_dimension;
-        icon_rect.bottom 	= icon_dimension;
+        icon_rect.bottom	= icon_dimension;
         win32_center_rect_in_rect(&icon_rect, &button_rects.maximize);
         SelectObject(hdc, button_icon_pen);
         SelectObject(hdc, GetStockObject(HOLLOW_BRUSH));
