@@ -52,7 +52,7 @@ int WinMain(
   CreateWindowExW(WS_EX_APPWINDOW,window_class_name,L"Win32 Custom Title Bar Example",
     // The
     window_style,
-    CW_USEDEFAULT,CW_USEDEFAULT, //x,y
+    0,0, //x,y test, was CW_USEDEFAULT
     800,600, //w,h
     0,0,0,0
   );
