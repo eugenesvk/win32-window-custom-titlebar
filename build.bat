@@ -1,7 +1,7 @@
 @echo off
 
 if not defined DevEnvDir (
-    call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+  call "C:\Program Files (x86)\4 Develop\Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
 )
 
 set BUILD_DIR=out
